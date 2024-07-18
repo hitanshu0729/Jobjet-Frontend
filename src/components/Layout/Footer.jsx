@@ -10,16 +10,16 @@ const Footer = () => {
     <footer className={isAuthorized ? "footerShow" : "footerHide"}>
       <div>&copy; All Rights Reserved By Hitanshu.</div>
       <div>
-        <Link to={""} target="_blank">
+        <Link to={"https://www.linkedin.com/in/hitanshu-gavri-ba164028a/"} target="_blank">
           <FaFacebookF />
         </Link>
-        <Link to={""} target="_blank">
+        <Link to={"https://www.linkedin.com/in/hitanshu-gavri-ba164028a/"} target="_blank">
           <FaYoutube />
         </Link>
-        <Link to={""} target="_blank">
+        <Link to={"https://www.linkedin.com/in/hitanshu-gavri-ba164028a/"} target="_blank">
           <FaLinkedin />
         </Link>
-        <Link to={""} target="_blank">
+        <Link to={"https://www.linkedin.com/in/hitanshu-gavri-ba164028a/"} target="_blank">
           <RiInstagramFill />
         </Link>
       </div>

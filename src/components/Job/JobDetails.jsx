@@ -19,6 +19,7 @@ const JobDetails = () => {
         setJob(res.data.job);
       })
       .catch((error) => {
+        console.log(error);
         navigateTo("/notfound");
       });
   }, []);

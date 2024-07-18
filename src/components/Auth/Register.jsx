@@ -43,17 +43,16 @@ const Register = () => {
     }
   };
 
-  if(isAuthorized){
-    return <Navigate to={'/'}/>
+  if (isAuthorized) {
+    return <Navigate to={"/"} />;
   }
-
 
   return (
     <>
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/JobZeelogo.png" alt="logo" />
+            <img src="/JobJetlogo.png" alt="logo" />
             <h3>Create a new account</h3>
           </div>
           <form>
@@ -73,7 +72,7 @@ const Register = () => {
               <div>
                 <input
                   type="text"
-                  placeholder="Zaheer"
+                  placeholder="Rahul"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
