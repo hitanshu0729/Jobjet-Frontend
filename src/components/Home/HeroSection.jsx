@@ -42,7 +42,14 @@ const HeroSection = () => {
             </p>
           </div>
           <div className="image">
-            <img src="/manWorking.jpg" alt="hero"/>
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcSet="/MyJobjetLogo.jpg"
+              />
+              <source media="(min-width: 601px)" srcSet="/manWorking.jpg" />
+              <img src="/manWorking.jpg" alt="hero" />
+            </picture>
           </div>
         </div>
         <div className="details">
