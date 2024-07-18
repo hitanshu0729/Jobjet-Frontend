@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaBuilding, FaSuitcase, FaUsers, FaUserPlus } from "react-icons/fa";
-
+import { Context } from "../../main";
 const HeroSection = () => {
   const details = [
     {
@@ -28,13 +28,23 @@ const HeroSection = () => {
       icon: <FaUserPlus />,
     },
   ];
+  const { isAuthorized, setIsAuthorized, user } = useContext(Context);
   return (
     <>
       <div className="heroSection">
         <div className="container">
           <div className="title">
-            <h1>Find a job that suits</h1>
-            <h1>your interests and skills</h1>
+            {user && user.role != "Employer" ? (
+              <h1>
+                Find a job that suits <br />
+                your interests and skills
+              </h1>
+            ) : (
+              <h1>
+                Find a talent that suits <br />
+                your needs
+              </h1>
+            )}
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
               voluptate repellat modi quidem aliquid eaque ducimus ipsa et,
@@ -43,10 +53,7 @@ const HeroSection = () => {
           </div>
           <div className="image">
             <picture>
-              <source
-                media="(max-width: 600px)"
-                srcSet="/MyJobjetLogo.jpg"
-              />
+              <source media="(max-width: 600px)" srcSet="/MyJobjetLogo.jpg" />
               <source media="(min-width: 601px)" srcSet="/manWorking.jpg" />
               <img src="/manWorking.jpg" alt="hero" />
             </picture>
