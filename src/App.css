@@ -273,7 +273,8 @@ p {
   overflow: hidden;
 }
 .heroSection .container .image img {
-  width: 100%;
+  /* width: 100%; */
+  width: auto;
   height: 100%;
 }
 .heroSection .details {
