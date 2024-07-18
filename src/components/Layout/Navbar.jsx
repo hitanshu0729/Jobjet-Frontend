@@ -13,7 +13,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/v1/user/logout",
+        "https://jobjet-backend.onrender.com/api/v1/user/logout",
         {
           withCredentials: true,
         }
@@ -25,12 +25,11 @@ const Navbar = () => {
       toast.error(error.response.data.message), setIsAuthorized(true);
     }
   };
-
   return (
     <nav className={isAuthorized ? "navbarShow" : "navbarHide"}>
       <div className="container">
         <div className="logo">
-          <img src="/JobJet-logos__white.png" alt="logo" />
+          <img src="/MyJobjetLogo.jpg" alt="logo" />
         </div>
         <ul className={!show ? "menu" : "show-menu menu"}>
           <li>

@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        "https://jobjet-backend.onrender.com/api/v1/user/login",
         { email, password, role },
         {
           headers: {
@@ -46,7 +46,7 @@ const Login = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/JobJetlogo.png" alt="logo" />
+            <img src="/MyJobjetLogo.jpg" alt="logo" style={{ width: "auto" }} />
             <h3>Login to your account</h3>
           </div>
           <form>

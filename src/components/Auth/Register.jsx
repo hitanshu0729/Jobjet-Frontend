@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/register",
+        "https://jobjet-backend.onrender.com/api/v1/user/register",
         { name, phone, email, role, password },
         {
           headers: {
@@ -52,7 +52,7 @@ const Register = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/JobJetlogo.png" alt="logo" />
+            <img src="/MyJobjetLogo.jpg" alt="logo" style={{ width: "auto" }} />
             <h3>Create a new account</h3>
           </div>
           <form>

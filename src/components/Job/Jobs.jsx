@@ -10,7 +10,7 @@ const Jobs = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:4000/api/v1/job/getall", {
+        .get("https://jobjet-backend.onrender.com/api/v1/job/getall", {
           withCredentials: true,
         })
         .then((res) => {
@@ -21,7 +21,9 @@ const Jobs = () => {
     }
   }, []);
   if (!isAuthorized) {
-    navigateTo("/");
+    setTimeout(() => {
+      navigateTo("/");
+    }, 500);
   }
 
   return (
