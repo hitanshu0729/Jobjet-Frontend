@@ -23,7 +23,7 @@ const Register = () => {
     try {
       setRegister("Sending your data to our servers... Please wait");
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/register",
+        "https://jobjet-backend.onrender.com/api/v1/user/register",
         { name, phone, email, role, password },
         {
           headers: {

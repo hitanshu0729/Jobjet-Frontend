@@ -19,7 +19,7 @@ const Login = () => {
     try {
       setLogin("Logging in ... Please wait");
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        "https://jobjet-backend.onrender.com/api/v1/user/login",
         { email, password, role },
         {
           headers: {
@@ -29,13 +29,15 @@ const Login = () => {
         }
       );
       toast.success(data.message);
-      setLogin("Login");
+
       setEmail("");
       setPassword("");
       setRole("");
       setIsAuthorized(true);
     } catch (error) {
       toast.error(error.response.data.message);
+    } finally {
+      setLogin("Login");
     }
   };
 
