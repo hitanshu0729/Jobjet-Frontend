@@ -15,14 +15,15 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-
+  const [register, setRegister] = useState("Register");
   const { isAuthorized, setIsAuthorized, user, setUser } = useContext(Context);
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
+      setRegister("Sending your data to our servers... Please wait");
       const { data } = await axios.post(
-        "https://jobjet-backend.onrender.com/api/v1/user/register",
+        "http://localhost:4000/api/v1/user/register",
         { name, phone, email, role, password },
         {
           headers: {
@@ -32,6 +33,7 @@ const Register = () => {
         }
       );
       toast.success(data.message);
+      setRegister("Register");
       setName("");
       setEmail("");
       setPassword("");
@@ -115,8 +117,12 @@ const Register = () => {
                 <RiLock2Fill />
               </div>
             </div>
-            <button type="submit" onClick={handleRegister}>
-              Register
+            <button
+              type="submit"
+              onClick={handleRegister}
+              style={{ cursor: "pointer" }}
+            >
+              {register}
             </button>
             <Link to={"/login"}>Login Now</Link>
           </form>
