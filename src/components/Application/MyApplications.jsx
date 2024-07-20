@@ -169,7 +169,10 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
         )}
       </div>
       <div className="btn_area">
-        <button onClick={() => deleteApplication(element._id)}>
+        <button
+          onClick={() => deleteApplication(element._id)}
+          style={{ cursor: "pointer" }}
+        >
           Delete Application
         </button>
       </div>
@@ -177,33 +180,49 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
   );
 };
 
-const EmployerCard = ({ element, openModal }) => (
-  <div className="job_seeker_card">
-    <div className="detail">
-      <p>
-        <span>Name:</span> {element.name}
-      </p>
-      <p>
-        <span>Email:</span> {element.email}
-      </p>
-      <p>
-        <span>Phone:</span> {element.phone}
-      </p>
-      <p>
-        <span>Address:</span> {element.address}
-      </p>
-      <p>
-        <span>CoverLetter:</span> {element.coverLetter}
-      </p>
+const EmployerCard = ({ element, openModal }) => {
+  const [isPdf, setIsPdf] = useState(false);
+
+  useEffect(() => {
+    if (element.resume.url.endsWith(".pdf")) {
+      setIsPdf(true);
+    } else {
+      setIsPdf(false);
+    }
+  }, [element.resume.url]);
+
+  return (
+    <div className="job_seeker_card">
+      <div className="detail">
+        <p>
+          <span>Name:</span> {element.name}
+        </p>
+        <p>
+          <span>Email:</span> {element.email}
+        </p>
+        <p>
+          <span>Phone:</span> {element.phone}
+        </p>
+        <p>
+          <span>Address:</span> {element.address}
+        </p>
+        <p>
+          <span>CoverLetter:</span> {element.coverLetter}
+        </p>
+      </div>
+      <div className="resume">
+        {isPdf ? (
+          <embed src={element.resume.url} width="100%" height="400px" />
+        ) : (
+          <img
+            src={element.resume.url}
+            alt="resume"
+            onClick={() => openModal(element.resume.url)}
+          />
+        )}
+      </div>
     </div>
-    <div className="resume">
-      <img
-        src={element.resume.url}
-        alt="resume"
-        onClick={() => openModal(element.resume.url)}
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 export default MyApplications;
