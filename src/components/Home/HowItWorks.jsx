@@ -23,7 +23,7 @@ const HowItWorks = () => {
               <p>Find a Job/Post a Job</p>
               <p>
                 Browse through various job listings or post your own job
-                opportunities. Use our filters to find the perfect match.
+                opportunities.
               </p>
             </div>
             <div className="card">
