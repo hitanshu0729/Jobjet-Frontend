@@ -33,7 +33,7 @@ const Jobs = () => {
   useEffect(() => {
     if (!isAuthorized) {
       setTimeout(() => {
-        navigateTo("/");
+        navigateTo("/login");
       }, 5000);
     }
   }, [isAuthorized, navigateTo]);
