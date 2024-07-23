@@ -36,7 +36,7 @@ const Jobs = () => {
         navigateTo("/login");
       }, 5000);
     }
-  }, [isAuthorized, navigateTo]);
+  }, );
 
   return (
     <section className="jobs page">
