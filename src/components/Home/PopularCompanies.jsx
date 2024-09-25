@@ -7,7 +7,7 @@ const PopularCompanies = () => {
     {
       id: 1,
       title: "Microsoft",
-      location: "Goregaon , Mumbai",
+      location: "station road , Pune",
       openPositions: 10,
       icon: <FaMicrosoft />,
     },
@@ -21,7 +21,7 @@ const PopularCompanies = () => {
     {
       id: 3,
       title: "Apple",
-      location: "Goregaon , Mumbai",
+      location: "Vasanth nagar , Bangalore",
       openPositions: 20,
       icon: <FaApple />,
     },
