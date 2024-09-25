@@ -45,11 +45,6 @@ const HeroSection = () => {
                 your needs
               </h1>
             )}
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              voluptate repellat modi quidem aliquid eaque ducimus ipsa et,
-              facere mollitia!
-            </p>
           </div>
           <div className="image">
             <picture>
